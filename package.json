@@ -26,6 +26,7 @@
     "surge": "^0.23.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.29.3",
     "gulp-sass": "^5.1.0",
     "sass": "^1.63.6"
   }
