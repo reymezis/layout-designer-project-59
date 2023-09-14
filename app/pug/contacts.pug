@@ -41,7 +41,7 @@ mixin createContactsList (contacts)
   include ./search.pug
   + searchForm('Поиск по контактам')
   each users, char in contacts
-    h2.text-muted.mb-3.h6.lh-base #{char}
+    h2.text-muted.mb-3.mt-5.h6.lh-base #{char}
     each user in users
       .shadow-sm
         a(href='#').text-decoration-none
