@@ -1,0 +1,38 @@
+-
+  var chats = {
+    "Вениамин Редакторович": [{
+      name: "Вениамин Редакторович",
+      message: "o_O",
+      time: "11:45",
+      avatar: "/images/avatar_4.jpg"
+    }],
+    "Джедай Падаванов": [{
+      name: "Джедай Падаванов",
+      message: "Привет, скоро третий проект? Уже скоро надо будет выложить",
+      time: "10:12",
+      avatar: "/images/avatar_2.jpg"
+    }],
+    "Алексей Примадонин": [{
+      name: "Алексей Примадонин",
+      message: "Тесты упали &gt_&lt;",
+      time: "08:53",
+      avatar: "/images/avatar_3.jpg"
+    }],
+  }
+
+
+mixin createChatsList (chats)
+  h1.h2.fw-bold.pb-4 Чаты
+  include ./search.pug
+  + searchForm('Поиск по сообщениям')
+  each users, name in chats
+    each user in users
+      .shadow-sm
+        a(href='#').text-decoration-none
+          div(data-chat="chat-item").d-flex.py-4.pe-6
+            include ./avatar.pug
+            + avatar(`${user.avatar}`)
+            .d-flex.flex-column.w-100.text-overflow-ellipsis
+              p(data-chat="chat-font-name") #{user.name}
+              p(data-chat="chat-font-message").small.text-overflow-ellipsis #{user.message}
+            p(data-chat="chat-font-time").small.flex-shrink-1 #{user.time}

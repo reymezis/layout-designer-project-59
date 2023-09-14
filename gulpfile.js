@@ -1,18 +1,21 @@
 const { src, dest, parallel, watch } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const cleanCSS = require('gulp-clean-css');
 const pug = require('gulp-pug');
 const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
 
 const browsersync = () => {
   browserSync.init({
-    server: { baseDir: 'build/' },
+    server: { baseDir: './build/' },
     notify: false,
     online: true
   });
 
-  watch('./app/**/*.js', scripts);
-	watch('./app/**/*.scss', buildSass);
-	watch('./app/**/*.pug', buildPug);
+  watch('app/**/*.js', scripts);
+  watch('images/**/*', copyImage);
+	watch('app/**/*.scss', buildSass);
+	watch('app/**/*.pug', buildPug);
 };
 
 const scripts = () => {
@@ -20,7 +23,7 @@ const scripts = () => {
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/bootstrap/dist/js/bootstrap.min.js.map',
   ])
-  .pipe(dest('./build/js/'))
+  .pipe(dest('build/js/'))
   .pipe(browserSync.stream())
 };
 
@@ -28,8 +31,10 @@ const buildSass = () => {
   console.log('Компиляция SASS');
 
   return src('app/scss/*.scss')
-    .pipe(sass())
-    .pipe(dest('build/'))
+    .pipe(sass({ sourceMap: false }))
+    .pipe(cleanCSS())
+    .pipe(concat('app.css'))
+    .pipe(dest('build/style/'))
     .pipe(browserSync.stream());
 }
 
@@ -42,5 +47,12 @@ const buildPug = () => {
     .pipe(browserSync.stream());
 }
 
-exports.build = parallel(scripts, buildSass, buildPug);
+const copyImage = () => {
+  console.log('Копирование изображений');
+
+  return src('images/**/*')
+    .pipe(dest(['build/images']));
+}
+
+exports.build = parallel(scripts, copyImage, buildSass, buildPug);
 exports.default = browsersync;

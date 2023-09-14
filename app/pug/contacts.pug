@@ -1,0 +1,53 @@
+-
+  var contacts = {
+    "A": [{
+      name: "Алексей Примадонин",
+      status: "Онлайн",
+      avatar: "/images/avatar_3.jpg"
+    }],
+
+    "В": [{
+      name: "Вениамин Редакторович",
+      status: "Онлайн",
+      avatar: "/images/avatar_4.jpg"
+    }],
+
+    "Д": [{
+      name: "Джедай Падаванов",
+      status: "Был онлайн вчера",
+      avatar: "/images/avatar_2.jpg"
+    }],
+
+    "К": [{
+      name: "Кодовёнок Хекслетович",
+      status: "Был онлайн 3 часа назад",
+      avatar: "/images/avatar_1.jpg"
+    },
+    {
+      name: "Королева Верстальщина",
+      status: "Была онлайн вчера",
+      avatar: "/images/avatar_5.jpg"
+    }],
+
+    "П": [{
+      name: "Питонист Джангович",
+      status: "Был онлайн вчера",
+      avatar: "/images/avatar_6.jpg"
+    }],
+  }
+
+mixin createContactsList (contacts)
+  h1.h2.fw-bold Контакты
+  include ./search.pug
+  + searchForm('Поиск по контактам')
+  each users, char in contacts
+    h2.text-muted.mb-3.h6.lh-base #{char}
+    each user in users
+      .shadow-sm
+        a(href='#').text-decoration-none
+          div(data-contact="contact-item").d-flex.align-items-center
+            include ./avatar.pug
+            + avatar(`${user.avatar}`)
+            .pt-4.pb-4
+              p(data-contact="contact-font-name") #{user.name}
+              p(data-contact="contact-font-status").small #{user.status}

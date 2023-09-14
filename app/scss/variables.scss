@@ -1,0 +1,33 @@
+@use "sass:map";
+
+$gray: #EFEFEF;
+$primary: #4545A5;
+$secondary: #6C757D;
+$success: #28A745;
+$info: #17A2B8;
+$warning: #FFC107;
+$danger: #DC3545;
+$light: #FBFBFB;
+$dark: #343A40;
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$add-gray: (
+  "gray": $gray
+);
+$theme-colors: map-merge($theme-colors, $add-gray);
+$grid-xxxl: (
+  xxxl: 1600px
+);
+$container-xxxl: (
+  xxxl: 1540px
+);
+$grid-breakpoints: map-merge($grid-breakpoints, $grid-xxxl);
+$container-max-widths: map-merge($container-max-widths, $container-xxxl);
+$spacer-six: (
+  6: $spacer * 2.5
+);
+$spacers: map-merge($spacers, $spacer-six);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

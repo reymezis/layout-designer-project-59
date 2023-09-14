@@ -18,16 +18,22 @@
   "homepage": "https://github.com/reymezis/layout-designer-project-59#readme",
   "dependencies": {
     "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^5.0.0",
     "gulp-svg-sprite": "^2.0.3",
+    "stylelint-scss": "^5.1.0",
     "surge": "^0.23.1"
   },
   "devDependencies": {
     "browser-sync": "^2.29.3",
+    "gulp-clean-css": "^4.3.0",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.63.6"
+    "htmlhint": "^1.1.4",
+    "sass": "^1.63.6",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^11.0.0"
   }
 }

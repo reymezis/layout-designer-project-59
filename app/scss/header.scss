@@ -1,1 +1,18 @@
+@import "variables";
 
+#header {
+  background-color: $primary;
+  border-radius: 1rem 0 0;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.p-logo {
+  padding: 24px 0 23px;
+}
+
+.menu-item {
+  font-family: Roboto, sans-serif;
+}

@@ -1,17 +1,77 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "variables";
+@import "mixin";
 
-@font-face {
-  font-weight: 400;
-  font-family: Roboto;
-  src: url("../fonts/Roboto.woff");
+.hide-scrollbar {
+  @include hide-scrollbar;
 }
 
-@font-face {
-  font-weight: 700;
-  font-family: Roboto;
-  src: url("../fonts/Robotobold.woff");
-}
+$enable-shadows: true;
 
 body {
-  background-color: red;
+  margin: 0 auto;
+  font-family: Roboto, sans-serif !important;
+  color: #212529;
+}
+
+.border-gray {
+  border-color: $gray;
+}
+
+.border-r {
+  border-radius: 1rem;
+}
+
+.pb-18px {
+  padding-bottom: 18px;
+}
+
+.h-72px {
+  height: 72px;
+}
+
+.sz-50px {
+  @include wh(50px, 50px);
+}
+
+.sz-90px {
+  @include wh(90px, 90px);
+}
+
+.sz-25px {
+  @include wh(25px, 25px);
+}
+
+.sz-h {
+  @include wh(15px, 25px);
+}
+
+[data-contact="contact-item"]:hover {
+  background-color: $primary;
+}
+
+[data-contact="contact-font-name"], [data-chat="chat-font-name"] {
+  margin: 0;
+  font-weight: 700;
+  color: #212529;
+}
+
+[data-contact="contact-font-status"],
+[data-chat="chat-font-time"],
+[data-chat="chat-font-message"] {
+  margin: 0;
+  color: $secondary;
+}
+
+[data-contact="contact-item"]:hover [data-contact^="contact-font"] {
+  color: $light;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.h-sections {
+  max-height: calc(100vh - 120px) ;
 }
