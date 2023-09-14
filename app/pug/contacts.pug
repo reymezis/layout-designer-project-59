@@ -37,7 +37,7 @@
   }
 
 mixin createContactsList (contacts)
-  h1.h2.fw-bold Контакты
+  h1.h2.fw-bold.pb-4.mb-0 Контакты
   include ./search.pug
   + searchForm('Поиск по контактам')
   each users, char in contacts
