@@ -1,8 +1,4 @@
 @media screen and (414px <= width <= 767px) {
-  #header {
-    border-radius: 0;
-  }
-
   #contacts {
     max-width: 414px;
   }
@@ -13,17 +9,5 @@
 
   .h-sections {
     max-height: calc(100vh - 72px);
-  }
-
-  .pr-40px {
-    padding-right: 40px;
-  }
-
-  .pl-21px {
-    padding-left: 21px;
-  }
-
-  .w-45 {
-    width: 55%;
   }
 }

@@ -12,6 +12,7 @@ $dark: #343A40;
 
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
 
 $add-gray: (
   "gray": $gray
@@ -29,5 +30,3 @@ $spacer-six: (
   6: $spacer * 2.5
 );
 $spacers: map-merge($spacers, $spacer-six);
-
-@import "../../node_modules/bootstrap/scss/bootstrap";

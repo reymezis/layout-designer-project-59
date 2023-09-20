@@ -1,0 +1,39 @@
+@use 'sass:map';
+
+$utilities: map.merge(
+  $utilities,
+  (
+    "radius": (
+      responsive: true,
+      property: border-radius,
+      class: radius,
+      values: (
+        null: 1rem
+      )
+    ),
+    "radius-left": (
+      responsive: true,
+      property: border-top-left-radius border-bottom-left-radius,
+      class: radius,
+      values: (
+        left: 1rem
+      )
+    ),
+    "radius-right": (
+      responsive: true,
+      property: border-top-right-radius border-bottom-right-radius,
+      class: radius,
+      values: (
+        right: 1rem
+      )
+    ),
+    "radius-left-top": (
+      responsive: true,
+      property: border-top-left-radius,
+      class: radius,
+      values: (
+        left-top: 1rem
+      )
+    )
+  )
+);

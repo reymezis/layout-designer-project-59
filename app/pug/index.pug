@@ -9,21 +9,22 @@ html(lang="ru")
     link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css')
     script(src='js/bootstrap.min.js')
   body
-    .container-fluid.p-md-4.p-lg-4.hide-scrollbar
-      .row
-        .col-12-sm.col-md-4.col-lg-4.p-0
-          .d-flex.flex-column
-            include ./header.pug
-            .tab-content
-              section(id='nav-contacts' role='tabpanel' aria-labelledby='contacts').pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show.active
-                include ./contacts.pug
-                + createContactsList (contacts)
-              section(id='nav-chats' role='tabpanel' aria-labelledby='chats').pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade
-                include ./chats.pug
-                + createChatsList (chats)
-              section(id='nav-profile' role='tabpanel' aria-labelledby='profile').pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade
-                include ./card.pug
-                include ./listgroup.pug
-        .col-md-8.col-lg-8.p-0.border-start.border-gray.d-none.d-md-flex.d-lg-flex.justify-content-center.align-self-center
-          section(id='startpage').hide-scrollbar
-            include ./startpage.pug
+    .p-md-4.p-lg-4.p-0.bg-gray.hide-scrollbar
+      .container-fluid.bg-white.radius-md.radius-lg
+        .row
+          .col-12-sm.col-md-4.col-lg-4.p-0
+            .d-flex.flex-column
+              include ./header.pug
+              .tab-content
+                section(id='nav-contacts' role='tabpanel' aria-labelledby='contacts').pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show.active
+                  include ./contacts.pug
+                  + createContactsList (contacts)
+                section(id='nav-chats' role='tabpanel' aria-labelledby='chats').pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade
+                  include ./chats.pug
+                  + createChatsList (chats)
+                section(id='nav-profile' role='tabpanel' aria-labelledby='profile').pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade
+                  include ./card.pug
+                  include ./listgroup.pug
+          .col-md-8.col-lg-8.p-0.border-start.border-gray.d-none.d-md-flex.d-lg-flex.justify-content-center.align-self-center
+            section(id='startpage').hide-scrollbar
+              include ./startpage.pug
