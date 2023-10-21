@@ -22,18 +22,19 @@
 
 
 mixin createChatsList (chats)
-  h1.h2.fw-bold.pb-4.mb-0 Чаты
-  include ./search.pug
-  + searchForm('Поиск по сообщениям')
-  each users, name in chats
-    each user in users
-      .border-top-0.shadow-sm.mb-3
-        a(href='#').text-decoration-none
-          div(data-chat="chat-item").d-flex.py-4.pe-6
-            include ./avatar.pug
-            + avatar(`${user.avatar}`)
-            .d-flex.flex-column.w-100.text-overflow-ellipsis
-              .d-flex.flex-grow-1.justify-content-between
-                p(data-chat="chat-font-name") #{user.name}
-                p(data-chat="chat-font-time").small #{user.time}
-              p(data-chat="chat-font-message").small.text-overflow-ellipsis #{user.message}
+  section(id='nav-chats' role='tabpanel' aria-labelledby='chats' class={active: page === "chat"}).pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show
+    h1.h2.fw-bold.pb-4.mb-0 Чаты
+    include ./search.pug
+    + searchForm('Поиск по сообщениям')
+    each users, name in chats
+      each user in users
+        .border-top-0.shadow-sm.mb-3
+          a(href='#').text-decoration-none
+            div(data-chat="chat-item").d-flex.py-4.pe-6
+              include ./avatar.pug
+              + avatar(`${user.avatar}`)
+              .d-flex.flex-column.w-100.text-overflow-ellipsis
+                .d-flex.flex-grow-1.justify-content-between
+                  p(data-chat="chat-font-name") #{user.name}
+                  p(data-chat="chat-font-time").small #{user.time}
+                p(data-chat="chat-font-message").small.text-overflow-ellipsis #{user.message}

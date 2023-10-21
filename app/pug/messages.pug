@@ -1,0 +1,76 @@
+-
+  var messagesList = [
+    {
+      name: "Вениамин Редакторович",
+      message: "Да, я уже вышел и минут через 20-30 буду у тебя. Поеду на трамвае и потом в магазин. Тебе что-то захватить?",
+      time: "8 минут назад",
+      avatar: "/images/avatar_4.jpg"
+    },
+    {
+      name: "",
+      message: "Захвати мне колы и пару печенек. Как-то очень сладкого хочется, а в магазин идти лень",
+      time: "8 минут назад",
+      avatar: "/images/avatar_1.jpg"
+    },
+    {
+      name: "Вениамин Редакторович",
+      message: "Лады",
+      time: "5 минут назад",
+      avatar: "/images/avatar_4.jpg"
+    },
+    {
+      name: "",
+      message: "А, слушай, купи мне ещё Macbook Pro. А то хочется работать в Хекслете, а там это условие",
+      time: "3 минуты назад",
+      avatar: "/images/avatar_1.jpg"
+    },
+    {
+      name: "Вениамин Редакторович",
+      message: "о_О",
+      time: "Только что",
+      avatar: "/images/avatar_4.jpg"
+    }
+  ]
+
+mixin createCurrentChat (messagesList = [])
+  .hide-scrollbar.d-flex.flex-wrap.h-current-chat
+    each user in messagesList
+      if user.name == ''
+        .d-flex.justify-content-end.w-100
+          .d-flex.align-items-end.mx-5.my-3.w-75
+            include ./avatar.pug
+            + avatar(`${user.avatar}`)
+            .d-flex.flex-wrap.flex-column.p-4.radius.bg-primary
+              p.m-0.text-light #{user.message}
+              hr.my-2.text-gray
+              p.m-0.text-light.small #{user.time}
+      else
+        .d-flex.justify-content-start.w-100
+          .d-flex.align-items-end.mx-5.my-3.w-75
+            include ./avatar.pug
+            + avatar(`${user.avatar}`)
+            .d-flex.flex-wrap.flex-column.p-4.radius.bg-light.shadow-sm
+              p.m-0.fw-bold #{user.name}
+              p.m-0.text-secondary #{user.message}
+              hr.my-2.text-gray
+              p.m-0.text-secondary.small #{user.time}
+
+
+mixin createCurrentChatMb (messagesList = [])
+  .hide-scrollbar.d-flex.flex-wrap.h-current-chat
+    each user in messagesList
+      if user.name == ''
+        .d-flex.justify-content-center
+          .d-flex.align-items-end.mx-5.my-3
+            .d-flex.flex-wrap.flex-column.py-4.pe-2.ps-4.radius.bg-primary
+              p.m-0.text-light #{user.message}
+              hr.my-2.text-gray
+              p.m-0.text-light.small #{user.time}
+      else
+        .d-flex.justify-content-center
+          .d-flex.align-items-end.mx-5.my-3
+            .d-flex.flex-wrap.flex-column.py-4.pe-2.ps-4.radius.bg-white.shadow-sm
+              p.m-0.fw-bold #{user.name}
+              p.m-0.text-secondary #{user.message}
+              hr.my-2.text-light
+              p.m-0.text-secondary.small #{user.time}

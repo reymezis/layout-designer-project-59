@@ -1,0 +1,15 @@
+section(id='nav-current-chat' role='tabpanel' aria-labelledby='current-chat').d-md-none.d-lg-none.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade
+  .position-sticky.top-0
+    .d-flex.py-4.pe-6.border-bottom.border-gray
+      include ./avatar.pug
+      + avatar('../images/avatar_4.jpg')
+      .d-flex.flex-column
+        p(data-chat="chat-font-name").m-0 Вениамин Редакторович
+        p(data-contact="contact-font-status").small.m-0 Онлайн
+  include ./messages.pug
+  + createCurrentChatMb (messagesList)
+  .position-sticky.bottom-0
+    form.d-flex.justify-content-between.align-items-center.border-top.border-gray
+      input(type="text" placeholder="Напишите сообщение...").border-0.text-secondary.my-4.ps-3.flex-grow-1
+      button.sz-50px.bg-primary.border-0.rounded-circle.me-3
+        i.bi.bi-cursor.text-light.fs-4.text-center

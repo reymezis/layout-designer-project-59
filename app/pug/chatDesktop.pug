@@ -1,0 +1,5 @@
+section(id='current-chat').hide-scrollbar
+  include ./headerChat.pug
+  include ./messages.pug
+  + createCurrentChat (messagesList) 
+  include ./sendMessageForm.pug

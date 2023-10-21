@@ -1,0 +1,24 @@
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Hexlet chat
+    link(rel='stylesheet' href='style/app.css')
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css')
+    script(src='js/bootstrap.min.js')
+  body
+    .p-md-4.p-lg-4.p-0.bg-gray.hide-scrollbar
+      .container-fluid.bg-white.radius-md.radius-lg
+        .row
+          .col-12-sm.col-md-4.col-lg-4.p-0
+            .d-flex.flex-column
+              include ./header.pug
+              .tab-content
+                block left
+          .col-md-8.col-lg-8.p-0.border-start.border-gray
+            .h-100.d-xs-none.d-none.d-md-flex.d-lg-flex.justify-content-center.align-items-center
+              block right

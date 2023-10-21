@@ -37,17 +37,18 @@
   }
 
 mixin createContactsList (contacts)
-  h1.h2.fw-bold.pb-4.mb-0 Контакты
-  include ./search.pug
-  + searchForm('Поиск по контактам')
-  each users, char in contacts
-    h2.text-muted.mb-3.mt-5.h6.lh-base #{char}
-    each user in users
-      .shadow-sm
-        a(href='#').text-decoration-none
-          div(data-contact="contact-item").d-flex.align-items-center
-            include ./avatar.pug
-            + avatar(`${user.avatar}`)
-            .pt-4.pb-4
-              p(data-contact="contact-font-name") #{user.name}
-              p(data-contact="contact-font-status").small #{user.status}
+  section(id='nav-contacts' role='tabpanel' aria-labelledby='contacts'  class={active: page === "index"}).pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show
+    h1.h2.fw-bold.pb-4.mb-0 Контакты
+    include ./search.pug
+    + searchForm('Поиск по контактам')
+    each users, char in contacts
+      h2.text-muted.mb-3.mt-5.h6.lh-base #{char}
+      each user in users
+        .shadow-sm
+          a(href='#').text-decoration-none
+            div(data-contact="contact-item").d-flex.align-items-center
+              include ./avatar.pug
+              + avatar(`${user.avatar}`)
+              .pt-4.pb-4
+                p(data-contact="contact-font-name") #{user.name}
+                p(data-contact="contact-font-status").small #{user.status}
