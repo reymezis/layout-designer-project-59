@@ -4,6 +4,7 @@ const cleanCSS = require('gulp-clean-css');
 const pug = require('gulp-pug');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
+const cssbeautify = require('gulp-cssbeautify');
 
 const browsersync = () => {
   browserSync.init({
@@ -22,6 +23,7 @@ const scripts = () => {
   return src([
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/bootstrap/dist/js/bootstrap.min.js.map',
+    './app/pageSwitcher.js',
   ])
   .pipe(dest('build/js/'))
   .pipe(browserSync.stream())
@@ -34,6 +36,7 @@ const buildSass = () => {
     .pipe(sass({ sourceMap: false }))
     .pipe(cleanCSS())
     .pipe(concat('app.css'))
+    .pipe(cssbeautify())
     .pipe(dest('build/style/'))
     .pipe(browserSync.stream());
 }
@@ -41,7 +44,10 @@ const buildSass = () => {
 const buildPug = () => {
   console.log('Компиляция Pug');
 
-  return src('app/pug/*.pug')
+  return src([
+    'app/pug/index.pug',
+    'app/pug/chat.pug',
+  ])
     .pipe(pug())
     .pipe(dest('build/'))
     .pipe(browserSync.stream());
