@@ -33,22 +33,23 @@
   ]
 
 mixin createCurrentChat (messagesList = [])
-  .hide-scrollbar.d-flex.flex-wrap.h-current-chat
+  .hide-scrollbar.d-flex.flex-wrap.py-5.px-5.h-current-chat
     each user in messagesList
       if user.name == ''
         .d-flex.justify-content-end.w-100
-          .d-flex.align-items-end.mx-5.my-3.w-75
-            include ./avatar.pug
-            + avatar(`${user.avatar}`)
-            .d-flex.flex-wrap.flex-column.p-4.radius.bg-primary
-              p.m-0.text-light #{user.message}
-              hr.my-2.text-gray
-              p.m-0.text-light.small #{user.time}
+          .d-flex.justify-content-end.pb-3
+            .d-flex.w-75
+              .d-flex.align-items-end
+                img(src=`${user.avatar}`, alt="avatar").sz-50px.rounded-circle.me-3
+              .d-flex.flex-wrap.flex-column.p-4.radius.bg-primary
+                p.m-0.text-light #{user.message}
+                hr.mt-2.mb-1.text-gray
+                p.m-0.text-light.small #{user.time}
       else
-        .d-flex.justify-content-start.w-100
-          .d-flex.align-items-end.mx-5.my-3.w-75
-            include ./avatar.pug
-            + avatar(`${user.avatar}`)
+        .d-flex.justify-content-start.pb-3.w-100
+          .w-75.d-flex
+            .d-flex.align-items-end
+              img(src=`${user.avatar}`, alt="avatar").sz-50px.rounded-circle.me-3
             .d-flex.flex-wrap.flex-column.p-4.radius.bg-light.shadow-sm
               p.m-0.fw-bold #{user.name}
               p.m-0.text-secondary #{user.message}

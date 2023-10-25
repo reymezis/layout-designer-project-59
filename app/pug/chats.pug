@@ -30,10 +30,10 @@ mixin createChatsList (chats)
       each user in users
         .border-top-0.shadow-sm.mb-3
           a(href='#').text-decoration-none
-            div(data-chat="chat-item").d-flex.py-4.pe-6
+            div(data-chat="chat-item").d-flex.pe-6.align-items-center
               include ./avatar.pug
               + avatar(`${user.avatar}`)
-              .d-flex.flex-column.w-100.text-overflow-ellipsis
+              .d-flex.flex-column.w-100.text-overflow-ellipsis.py-4
                 .d-flex.flex-grow-1.justify-content-between
                   p(data-chat="chat-font-name") #{user.name}
                   p(data-chat="chat-font-time").small #{user.time}

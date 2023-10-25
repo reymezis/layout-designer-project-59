@@ -22230,7 +22230,6 @@ textarea.form-control-lg {
 
 body {
     margin: 0 auto;
-    font-family: Roboto,sans-serif!important;
     color: #212529
 }
 
@@ -22321,11 +22320,11 @@ body {
     }
 
     .h-sections {
-        max-height: calc(100vh - 72px)
+        height: 100%
     }
 
     .h-current-chat {
-        max-height: calc(100vh - 246px)
+        height: calc(100vh - 246px)
     }
 }
 
@@ -22342,7 +22341,6 @@ body {
 
 body {
     margin: 0 auto;
-    font-family: Roboto,sans-serif!important;
     color: #212529
 }
 
@@ -22433,10 +22431,10 @@ body {
     }
 
     .h-sections {
-        max-height: calc(100vh - 72px)
+        height: 100%
     }
 
     .h-current-chat {
-        max-height: calc(100vh - 246px)
+        height: calc(100vh - 246px)
     }
 }

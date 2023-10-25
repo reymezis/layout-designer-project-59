@@ -8,11 +8,11 @@
   }
 
   .h-sections {
-    max-height: calc(100vh - 72px);
+    height: 100%;
   }
 
   .h-current-chat {
-    max-height: calc(100vh - 246px);
+    height: calc(100vh - 246px);
   }
 }
 
