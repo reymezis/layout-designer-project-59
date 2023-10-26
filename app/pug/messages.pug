@@ -65,13 +65,13 @@ mixin createCurrentChatMb (messagesList = [])
           .d-flex.align-items-end.mx-5
             .d-flex.flex-wrap.flex-column.py-4.pe-2.ps-4.radius.bg-primary
               p.m-0.text-light #{user.message}
-              hr.my-2.text-gray
+              hr.mt-2.mb-1.text-gray
               p.m-0.text-light.small #{user.time}
       else
         .d-flex.justify-content-center.mb-3
           .d-flex.align-items-end.mx-5
-            .d-flex.flex-wrap.flex-column.py-4.pe-2.ps-4.radius.bg-white.shadow-sm
+            .d-flex.flex-wrap.flex-column.py-4.pe-2.ps-4.radius.bg-light.shadow-sm
               p.m-0.fw-bold #{user.name}
               p.m-0.text-secondary #{user.message}
-              hr.mt-2.mb-1.text-light
+              hr.my-2.text-gray
               p.m-0.text-secondary.small #{user.time}
