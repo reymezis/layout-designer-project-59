@@ -2,7 +2,7 @@ header(id='header').order-md-0.order-lg-0.order-2.radius-md-left-top.radius-lg-l
   div(role='tablist').h-72px.d-flex.flex-wrap.align-content-center.justify-content-between.justify-content-md-evenly.justify-content-lg-evenly
     a(href='./index.html' id='home-tab' data-bs-toggle='tab' data-bs-target='#home' type='button' role='tab' aria-controls='home' aria-selected='false').nav-link.px-3
       img(src='../images/icons/logo.svg', alt='logotype').sz-h.invert
-    .d-flex.flex-wrap.justify-content-evenly.flex-md-grow-1
+    nav.d-flex.flex-wrap.justify-content-evenly.flex-md-grow-1
       if page === 'chat'
         a(href='#current-chat' id='current-chat-tab' data-bs-toggle='tab' data-bs-target='#current-chat' type='button' role='tab' aria-controls='current-chat' aria-selected='false').d-md-none.d-lg-none.pe-6.pe-md-0.pe-lg-0
           i.bi.bi-chat-left-text.text-light.fs-3
