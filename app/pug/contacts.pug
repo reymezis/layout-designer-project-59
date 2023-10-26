@@ -37,7 +37,7 @@
   }
 
 mixin createContactsList (contacts)
-  section(id='nav-contacts' role='tabpanel' aria-labelledby='contacts'  class={active: page === "index"}).pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show
+  section(id='contacts' role='tabpanel' aria-labelledby='contacts-tab'  class={active: page === "index"}).pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show
     h1.h2.fw-bold.pb-4.mb-0 Контакты
     include ./search.pug
     + searchForm('Поиск по контактам')

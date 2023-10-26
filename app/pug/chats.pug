@@ -22,7 +22,7 @@
 
 
 mixin createChatsList (chats)
-  section(id='nav-chats' role='tabpanel' aria-labelledby='chats' class={active: page === "chat"}).pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show
+  section(id='chats' role='tabpanel' aria-labelledby='chats-tab' class={active: page === "chat"}).pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show
     h1.h2.fw-bold.pb-4.mb-0 Чаты
     include ./search.pug
     + searchForm('Поиск по сообщениям')
