@@ -1,9 +1,9 @@
 section(id='current-chat' role='tabpanel' aria-labelledby='current-chat-tab').d-md-none.d-lg-none.hide-scrollbar.h-100.order-md-1.order-lg-1.order-1.tab-pane.fade
   .position-sticky.top-0
-    .d-flex.py-4.pe-6.border-bottom.border-gray
+    .d-flex.align-items-center.pe-6.border-bottom.border-gray
       include ./avatar.pug
       + avatar('../images/avatar_4.jpg')
-      .d-flex.flex-column
+      .d-flex.flex-column.py-4
         p(data-chat="chat-font-name").m-0 Вениамин Редакторович
         p(data-contact="contact-font-status").small.m-0 Онлайн
   include ./messages.pug

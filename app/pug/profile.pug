@@ -1,3 +1,6 @@
 section(id='profile' role='tabpanel' aria-labelledby='profile-tab').pt-5.px-4.hide-scrollbar.h-sections.order-md-1.order-lg-1.order-1.tab-pane.fade.show
+  h1.h2.fw-bold.pb-4.mb-0 Профиль
+  include ./search.pug
+  + searchForm('Поиск по сообщениям')
   include ./card.pug
   include ./listgroup.pug
